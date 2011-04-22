@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "homepage": "http://naneau.net/",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "git://github.com/naneau/saiga.git"
   },
   "author": "Maurice Fonk <saiga@naneau.nl> (http://naneau.net/)",
   "directories": {
