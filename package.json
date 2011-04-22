@@ -16,5 +16,8 @@
   },
   "engines": {
     "node": "*"
+  },
+  "dependencies" : { 
+      "nyala" : "*"
   }
 }
