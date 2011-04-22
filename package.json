@@ -1,0 +1,20 @@
+{
+  "name": "saiga",
+  "description": "A set of handy file system/build tools, based on Nyala promises",
+  "version": "0.0.1",
+  "homepage": "http://naneau.net/",
+  "repository": {
+    "url": ""
+  },
+  "author": "Maurice Fonk <saiga@naneau.nl> (http://naneau.net/)",
+  "directories": {
+    "lib": "lib"
+  },
+  "main" : "./lib/index",  
+  "scripts": {
+    "test": "cake test"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
