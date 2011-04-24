@@ -14,13 +14,13 @@ fs = require 'fs'
 read = (fileName, encoding = 'utf8') -> new Promise ->
     fs.readFile fileName, encoding, (error, contents) =>
         return @break error if error?
-        @keep contents
+        @keep contents, fileName
 
 # Write a file
 write = (fileName, contents, encoding) -> new Promise ->
     fs.writeFile fileName, contents, encoding, (error) =>
         return @break error if error?
-        @keep fileName, contents
+        @keep contents, fileName
 
 # Last changed for a file, returns a JS Date object
 lastChanged = (fileName) -> new Promise ->
