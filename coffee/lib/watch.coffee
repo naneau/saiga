@@ -29,9 +29,9 @@ class Watcher
 # we don't use Node's fs.watchFile for this
 file = (fileName, callback) -> new Watcher ->
     findLastChanged = file.lastChanged fileName
-    findLastChanged.kept (actualChange) =>
-        do callback if actualLastChanged > lastChange and @lastChanged isnt false
-        @lastChanged = actualChange if actualChange > @lastChanged or @lastChanged is false            
+    findLastChanged.kept (actualLastChanged) =>
+        do callback if @lastChanged isnt false and actualLastChanged > @lastChanged
+        @lastChanged = actualLastChanged if actualLastChanged > @lastChanged or @lastChanged is false            
     
     do findLastChanged.execute
     
@@ -39,8 +39,8 @@ file = (fileName, callback) -> new Watcher ->
 directory = (directory, callback) -> new Watcher ->
     findLastChanged = saigaDir.lastChanged directory
     findLastChanged.kept (actualLastChanged, changedFile) =>
-        do callback if actualLastChanged > lastChange and @lastChanged isnt false
-        @lastChanged = actualChange if actualChange > @lastChanged or @lastChanged is false            
+        do callback if @lastChanged isnt false and actualLastChanged > @lastChanged
+        @lastChanged = actualLastChanged if actualLastChanged > @lastChanged or @lastChanged is false            
                 
     do findLastChanged.execute
 
