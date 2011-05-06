@@ -1,7 +1,7 @@
 {
   "name": "saiga",
   "description": "A set of handy file system/build tools, based on Nyala promises",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "http://naneau.net/",
   "repository": {
     "type": "git",

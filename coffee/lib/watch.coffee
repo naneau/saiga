@@ -42,6 +42,6 @@ directory = (directory, callback) -> new Watcher ->
         do callback if actualLastChanged > lastChange and @lastChanged isnt false
         @lastChanged = actualChange if actualChange > @lastChanged or @lastChanged is false            
                 
-    do lastChanged.execute
+    do findLastChanged.execute
 
 module.exports = {directory, file}
