@@ -13,12 +13,13 @@ class Watcher
     interval: 100
     
     # Constructor, @fn will be scoped to the Watcher instance
-    constructor: (@fn) -> 
-        @lastChanged = false
-        do @start
+    constructor: (@fn) -> do @start
         
     # Start watching
-    start: -> 
+    start: ->
+        # reset lastchanged
+        @lastChanged = false
+        
         callFn = => @fn.apply this
         @interval = setInterval callFn, Watcher::interval
 
@@ -37,9 +38,15 @@ file = (fileName, callback) -> new Watcher ->
     
 # Watch a directory, and call callback if any file in it changes
 directory = (directory, callback) -> new Watcher ->
+
+    # Find the last changed mtime in the dir
     findLastChanged = saigaDir.lastChanged directory
+    
+    # Once we find that changed mtime, compare it and call the callback with the changed file
     findLastChanged.kept (actualLastChanged, changedFile) =>
-        do callback if @lastChanged isnt false and actualLastChanged > @lastChanged
+        
+        callback changedFile if @lastChanged isnt false and actualLastChanged > @lastChanged
+        
         @lastChanged = actualLastChanged if actualLastChanged > @lastChanged or @lastChanged is false            
                 
     do findLastChanged.execute
