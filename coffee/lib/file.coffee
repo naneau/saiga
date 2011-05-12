@@ -47,7 +47,11 @@ findAndCombine = (directory, name = false) -> new Promise ->
         readBurst.add read file for file in files
 
         # Write to the combination file with all js assets combined
-        readBurst.kept () => @keep readBurst.addResults ''
+        readBurst.kept () => 
+            combined = '';
+            readBurst.eachResult (contents, fileName) -> combined += contents
+            @keep combined
+            
         # Or fail if we can't
         readBurst.broken (error) => @break error
 
