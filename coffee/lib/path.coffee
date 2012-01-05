@@ -1,3 +1,4 @@
 module.exports =
+
     # Escape a filename
-    escape: (name) -> name.replace(' ', '\ ');
+    escape: (name) -> name # name.replace ' ', ' '

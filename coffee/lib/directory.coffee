@@ -10,6 +10,8 @@ saigaFs = require './fs'
 # Finding shit
 find = require './find'
 
+path = require './path'
+
 # Is a file a directory?
 isDirectory = (fileName) -> new Promise ->
     stat = saigaFs.stat fileName
