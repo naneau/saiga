@@ -1,7 +1,7 @@
 {
   "name": "saiga",
   "description": "A set of handy file system/build tools, based on Nyala promises",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "http://naneau.net/",
   "repository": {
     "type": "git",
@@ -11,14 +11,14 @@
   "directories": {
     "lib": "lib"
   },
-  "main" : "./lib/index",  
+  "main" : "./lib/index",
   "scripts": {
     "test": "cake test"
   },
   "engines": {
     "node": "*"
   },
-  "dependencies" : { 
+  "dependencies" : {
       "nyala" : "*"
   }
 }
