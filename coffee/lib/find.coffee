@@ -7,7 +7,7 @@
 # Find all from
 all = (directory) -> new Promise ->
 
-    directory = Path.escape(directory)
+    directory = Path.escape directory
 
     exec "find #{directory}", (error, stdout, stderr) =>
         return @break error if error?
@@ -16,7 +16,7 @@ all = (directory) -> new Promise ->
 # List files in a directory, wraps around regular ol' "find"
 byName = (directory, mask) -> new Promise ->
 
-    directory = Path.escape(directory)
+    directory = Path.escape directory
 
     exec "find #{directory} -name #{mask}", (error, stdout, stderr) =>
         return @break error if error?

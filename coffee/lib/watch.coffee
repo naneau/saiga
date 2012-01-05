@@ -30,7 +30,7 @@ class Watcher
 # Watch a file for changes
 # we don't use Node's fs.watchFile for this
 file = (fileName, callback) -> new Watcher ->
-    fileName = path.escape(fileName)
+    fileName = path.escape fileName
 
     findLastChanged = file.lastChanged fileName
     findLastChanged.kept (actualLastChanged) =>
@@ -42,7 +42,7 @@ file = (fileName, callback) -> new Watcher ->
 # Watch a directory, and call callback if any file in it changes
 directory = (directory, callback) -> new Watcher ->
 
-    directory = path.escape(directory)
+    directory = path.escape directory
 
     # Find the last changed mtime in the dir
     findLastChanged = saigaDir.lastChanged directory
