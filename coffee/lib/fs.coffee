@@ -1,11 +1,14 @@
 # Promises and such
-{Promise, PromiseBurst, PromiseChain} = require 'nyala'
+{Promise, PromiseBurst, PromiseChain, Path} = require 'nyala'
 
 # Node's FS
 fs = require 'fs'
 
 # Stat a file
 stat = (fileName) -> new Promise ->
+
+    fileName = Path.escape(fileName)
+
     fs.stat fileName, (statError, statData) =>
         return @break statError if statError?
         @keep statData, fileName
