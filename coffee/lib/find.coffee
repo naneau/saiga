@@ -1,5 +1,7 @@
 # Find wraps around regular ol' find
-{Promise, PromiseBurst, PromiseChain, Path} = require 'nyala'
+{Promise, PromiseBurst, PromiseChain} = require 'nyala'
+
+Path = require './path'
 
 # Exec
 {exec} = require 'child_process'

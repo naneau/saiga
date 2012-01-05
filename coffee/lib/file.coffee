@@ -1,5 +1,7 @@
 # Promises and such
-{Promise, PromiseBurst, PromiseChain, Path} = require 'nyala'
+{Promise, PromiseBurst, PromiseChain} = require 'nyala'
+
+Path = require './path'
 
 # Saiga's fs
 saigaFs = require './fs'

@@ -1,5 +1,7 @@
 # Promises and such
-{Promise, PromiseBurst, PromiseChain, Path} = require 'nyala'
+{Promise, PromiseBurst, PromiseChain} = require 'nyala'
+
+Path = require './path'
 
 # Node's FS
 fs = require 'fs'
